@@ -9,7 +9,11 @@ services:
       - "3050:80"
   postgres:
     image: "postgres:latest"
+    ports:
+      - "5432:5432"
     environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_DB=postgres
       - POSTGRES_PASSWORD=postgres_password
   redis:
     image: "redis:latest"
